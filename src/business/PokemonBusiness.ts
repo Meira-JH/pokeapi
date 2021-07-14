@@ -1,7 +1,6 @@
-import { PokemonAPI } from "../data/PokemonAPI";
-import { PokemonsSimpleListT } from "../models/pokemons";
-import { Authenticator } from "../services/Authenticator";
-
+import { PokemonAPI } from '../data/PokemonAPI';
+import { PokemonsSimpleListT } from '../models/pokemons';
+import { Authenticator } from '../services/Authenticator';
 
 export class PokemonBusiness {
   constructor(
@@ -9,14 +8,23 @@ export class PokemonBusiness {
     private authenticator: Authenticator
   ) {}
 
-  public async fetchAllPokemons  (token: string): Promise<PokemonsSimpleListT[]>{
+  public async fetchAllPokemons(token: string): Promise<PokemonsSimpleListT> {
+    this.authenticator.getData(token);
 
-    this.authenticator.getData(token)
+    const pokemonList = await this.pokemonAPI.fetchAllPokemons();
 
-    const pokemonList = await this.pokemonAPI.fetchAllPokemons()
-
-    return pokemonList
+    return pokemonList;
   }
 
+  public async fetchPokemonDetails(
+    token: string,
+    pokemonName: string
+  ): Promise<any> {
 
+    this.authenticator.getData(token);
+
+    const pokemonDetails = await this.pokemonAPI.fetchPokemonDetails(pokemonName);
+
+    return pokemonDetails;
+  }
 }
