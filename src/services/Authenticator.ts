@@ -6,25 +6,30 @@ export class Authenticator {
     input: AuthenticationData,
     expiresIn: string = process.env.REFRESH_TOKEN_EXPIRES_IN!
   ): string {
-    const user = jwt.sign(
-      {
-        id: input.id,
-        device: input.device,
-        role: input.role,
-      },
-      process.env.JWT_KEY as string,
-      {
-        expiresIn,
-      }
-    );
+    try{
+      const user = jwt.sign(
+        {
+          id: input.id,
+          device: input.device,
+          role: input.role,
+        },
+        process.env.JWT_KEY as string,
+        {
+          expiresIn,
+        }
 
-    if(!user){
+      );
+
+      return user;
+
+    } catch {
       throw {
         message: ERROR_MESSAGE.NOT_AUTHORIZED,
         status: 403
       }
     }
-    return user;
+
+
   }
 
   public getData(token: string): AuthenticationData {

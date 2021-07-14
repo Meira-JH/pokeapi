@@ -22,7 +22,7 @@ export class PokemonController {
       new Authenticator
     ).fetchAllPokemons(token)
 
-    response.status(200).send({message: 'success'});
+    response.status(200).send(pokemonsList);
 
   }
 }
