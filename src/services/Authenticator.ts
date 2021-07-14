@@ -1,11 +1,12 @@
 import * as jwt from "jsonwebtoken";
+import { ERROR_MESSAGE } from "../models/errorMessage";
 
 export class Authenticator {
   public generateToken(
     input: AuthenticationData,
     expiresIn: string = process.env.REFRESH_TOKEN_EXPIRES_IN!
   ): string {
-    const token = jwt.sign(
+    const user = jwt.sign(
       {
         id: input.id,
         device: input.device,
@@ -16,7 +17,14 @@ export class Authenticator {
         expiresIn,
       }
     );
-    return token;
+
+    if(!user){
+      throw {
+        message: ERROR_MESSAGE.NOT_AUTHORIZED,
+        status: 403
+      }
+    }
+    return user;
   }
 
   public getData(token: string): AuthenticationData {
