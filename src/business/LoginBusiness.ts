@@ -9,20 +9,25 @@ export class LoginBusiness {
     private userDataBase: UserDatabase
   ) {}
 
-  public async login(user: UserLoginRequestDTO): Promise<string> {
-    ThrowOn.invalidEmail(user.email);
+  public async login(user: UserLoginRequestDTO): Promise<UserDataBaseDTO | null> {
+
+    ThrowOn.validateEmail(user.email);
 
     const userFromDataBase = await this.userDataBase.getUserByEmail(user.email);
+
+    await ThrowOn.validatePassword(user.password, userFromDataBase?.password ?? '');
+
+    ThrowOn.validateField(userFromDataBase, {
+      message: ERROR_MESSAGE.INVALID_EMAIL_OR_PASSWORD,
+      status: 403,
+    });
 
     ThrowOn.validateProperty(userFromDataBase, {
       message: ERROR_MESSAGE.INVALID_PARAMETERS,
       status: 422,
     });
 
-    ThrowOn.invalidPassword(user.password, userFromDataBase.password);
 
-    const accessToken = ''
-
-    return ''
+   return userFromDataBase
   }
 }

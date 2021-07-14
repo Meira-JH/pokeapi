@@ -1,9 +1,10 @@
 import { UserDataBaseDTO, UserDTO } from '../dto/UserDTO';
+import { ThrowOn } from '../services/TrowOn';
 
 export class UserDatabase {
-  private static TABLE_NAME = '../users.json';
+  private static TABLE_NAME = '../../users.json';
 
-  public async getUserByEmail(email: string): Promise<UserDataBaseDTO> {
+  public async getUserByEmail(email: string): Promise<UserDataBaseDTO | null> {
     const userDataBase: UserDataBaseDTO[] =
       await require(UserDatabase.TABLE_NAME);
 
@@ -11,7 +12,7 @@ export class UserDatabase {
       if (user.email === email) return user;
     });
 
-    return user[0] || { id: '', email: '', password: '', role: '' };
+    return user[0] ?? null;
   }
 
   public async getUserById(id: string): Promise<any> {

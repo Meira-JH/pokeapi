@@ -6,6 +6,7 @@ import { CONSOLE_COLOR } from './models/console';
 import cors from 'cors';
 import requestErrorMiddleware from './middlewares/requestErrorMiddleware';
 import notFoundRouteMiddleware from './middlewares/notFoundRoute';
+import { IdGenerator } from './services/IdGenetor';
 
 dotenv.config();
 const app = express();

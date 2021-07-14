@@ -5,18 +5,19 @@ import { ValidateField } from './ValidateField';
 import { ValidateEmail } from './ValidateEmail';
 
 export class ThrowOn {
-  static invalidEmail(email: string): void {
+  static validateEmail(email: string): void {
     const isValidEmail = ValidateEmail.isEmailValid(email);
 
     if (!isValidEmail) {
-      throw { message: ERROR_MESSAGE.INVALID_EMAIL, status: 422 };
+      throw { message: ERROR_MESSAGE.INVALID_EMAIL_OR_PASSWORD, status: 422 };
     }
   }
 
-  static async invalidPassword(
+  static async validatePassword(
     password: string,
     hashedPassword: string
   ): Promise<void> {
+
     const isValidPassword = await HashManager.compareHashToPass(
       password,
       hashedPassword
@@ -24,7 +25,7 @@ export class ThrowOn {
 
     if (!isValidPassword) {
       throw {
-        message: ERROR_MESSAGE.NOT_AUTHORIZED,
+        message: ERROR_MESSAGE.INVALID_EMAIL_OR_PASSWORD,
         status: 403,
       };
     }
@@ -32,5 +33,9 @@ export class ThrowOn {
 
   static validateProperty<T>(input: T, error: TError): void {
     if (ValidateField.hasNullNanUndefinedProperty(input)) throw error;
+  }
+
+  static validateField<T>(input: T, error: TError): void {
+    if (ValidateField.isNullNanUndefined(input)) throw error;
   }
 }

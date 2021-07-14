@@ -1,5 +1,5 @@
 export enum ERROR_MESSAGE {
-  INVALID_EMAIL = 'invalid email',
+  INVALID_EMAIL_OR_PASSWORD = 'invalid email or password',
   INVALID_PARAMETERS = "unprocessable entity",
   GENERIC_ERROR = 'internal server error',
   NOT_AUTHORIZED = 'access not authorized',
