@@ -1,5 +1,5 @@
 import { UserDataBaseDTO, UserDTO } from '../dto/UserDTO';
-import { ThrowOn } from '../services/TrowOn';
+import { ThrowOn } from '../services/ThrowOn';
 
 export class UserDatabase {
   private static TABLE_NAME = '../../users.json';

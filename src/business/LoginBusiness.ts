@@ -1,6 +1,6 @@
 import { HashManager } from '../services/HashManager';
 import { UserDataBaseDTO, UserDTO, UserLoginRequestDTO } from '../dto/UserDTO';
-import { ThrowOn } from '../services/TrowOn';
+import { ThrowOn } from '../services/ThrowOn';
 import { UserDatabase } from '../data/UserDataBase';
 import { ERROR_MESSAGE } from '../models/errorMessage';
 
