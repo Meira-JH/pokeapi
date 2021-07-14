@@ -6,7 +6,7 @@ function requestHandlerMiddleware(handlerFn: RequestHandler) {
     try {
       await Promise.resolve(handlerFn(req as any, res as any, next));
     } catch (error) {
-      if(error.message.search('token')) {
+      if(error.message.search('token') !== -1) {
         error.message = ERROR_MESSAGE.NOT_AUTHORIZED
         error.status = 403
       }
