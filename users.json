@@ -1,0 +1,10 @@
+[
+  {
+    "id": "c7b1702f-a67c-48c8-89b4-506d4d16c826",
+    "name": "User One",
+    "email": "usertest@gmail.com",
+    "password": "$2a$04$fKdV4u/fQuwY7S7JhGHEHO/fFJCu5hsO0FosKSueFMdljpyUHmCNO",
+    "role": "user",
+    "device": "GalaxyS9"
+  }
+]

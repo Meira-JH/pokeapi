@@ -13,10 +13,3 @@ function requestErrorMiddleware(
 }
 
 export default requestErrorMiddleware;
-
-process.on('unhandledRejection', async (error: any) => {
-
-  console.error('UnhandledPromiseRejection');
-  console.error({ error });
-  process.exit();
-});
