@@ -8,10 +8,9 @@ export class PokemonBusiness {
     private authenticator: Authenticator
   ) {}
 
-  public async fetchAllPokemons(token: string): Promise<PokemonsSimpleListT> {
+  public async fetchAllPokemons(token: string, limit: number, offset: number): Promise<PokemonsSimpleListT> {
     this.authenticator.getData(token);
-
-    const pokemonList = await this.pokemonAPI.fetchAllPokemons();
+    const pokemonList = await this.pokemonAPI.fetchAllPokemons(limit, offset);
 
     return pokemonList;
   }

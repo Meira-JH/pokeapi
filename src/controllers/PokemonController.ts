@@ -11,6 +11,8 @@ export class PokemonController {
 
     // NOTE: need to pass path params and configure paging
     const token = request.headers.token as string;
+    const limit = Number(request.query.limit) ? Number(request.query.limit) : 20
+    const offset = Number(request.query.offset) > 0 ? Number(request.query.offset) : 0
 
     ThrowOn.validateField(token, {
       message: ERROR_MESSAGE.NOT_AUTHORIZED,
@@ -22,7 +24,7 @@ export class PokemonController {
       new Authenticator()
     );
 
-    const pokemonsList = await pokemonBusiness.fetchAllPokemons(token);
+    const pokemonsList = await pokemonBusiness.fetchAllPokemons(token, limit, offset);
 
     const detailedPokemonsList : PokemonDetailsDTO[] = []
 
