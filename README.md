@@ -2,7 +2,7 @@
 A pokemon fan web application.
 
 
-This is a full stack project. 
+<i>This is a full stack project.</i> 
 
 It consists in the development of a web-mobile-first application.
 
