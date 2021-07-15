@@ -16,7 +16,7 @@ It consists in the development of a web-mobile-first application.
 
 This web project is being followed through a <a href='https://trello.com/b/MSUP1AiW/pokemon-api'> Trello board </a>, in a Kanban style.
 
-## About gitflow
+## About gitflow :arrows_counterclockwise:
 
 There should be only the branches <b>main, release and develop active</b>; but for the sake of historicity to show how I approached the gitflow, I chose to maintain all branches active.
 
