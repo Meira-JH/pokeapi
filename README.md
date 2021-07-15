@@ -10,10 +10,9 @@ It consists in the development of a web-mobile-first application.
 
 :small_orange_diamond: The **backend** is an API coded in Typescript and integrated with a <a href="https://pokeapi.co/docs/v2">pokemon api</a> . 
 
-:small_orange_diamond: Front was inspired by some independent projects.
+:small_orange_diamond: Front was inspired by some independent projects and, although it contains mostly original code, it has some components and logics from <a href='https://github.com/marcelinosandroni/pokedex> this repository </a> .
 
 ## Tools and technologies :wrench:
-  
 
 <p align="center">
 <img width="40px" src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"/>
