@@ -1,4 +1,4 @@
-# Pokemon API :headphones: - UNDER DEVELOPMENT
+# Pokemon API - UNDER DEVELOPMENT
 A pokemon fan web application.
 
 
@@ -6,9 +6,9 @@ This is a full stack project.
 
 It consists in the development of a web-mobile-first application.
 
-:small_orange_diamond: The **front-end** code uses ReactJS with NextJS framework. 
+:small_orange_diamond: The **frontend** code uses ReactJS with NextJS framework. 
 
-:small_orange_diamond: The **back-end** is an API coded in Typescript and integrated with a <a href="https://pokeapi.co/docs/v2">pokemon api</a> . 
+:small_orange_diamond: The **backend** is an API coded in Typescript and integrated with a <a href="https://pokeapi.co/docs/v2">pokemon api</a> . 
 
 :small_orange_diamond: Front was inspired by some independent projects.
 
@@ -31,9 +31,6 @@ It consists in the development of a web-mobile-first application.
 </p>
 <p>
 <img height="22px" src="https://github.com/Meira-JH/futureEats/blob/master/futureEats/src/imgs/JSLibReactJS.png"/>
-</p>
-<p>
-<img height="22px" src="https://github.com/Meira-JH/futureEats/blob/master/futureEats/src/imgs/tools.png"/>
 </p>
 <p>
 <img height="22px" src="https://github.com/Meira-JH/futureEats/blob/master/futureEats/src/imgs/layout.png"/>
@@ -65,9 +62,11 @@ yarn dev
 
 ## Code architecture :computer:
 
-The frontend code was designed concerned with JS best practices to fit the use of NextJS tools/libs and Clean Code. In order to do that, the source folder was divided in actions, components, containers, pages and support folders (hooks, public and service).
+The backend was designed to fit MVC architecture in TypeScript, using Express framework.
 
-The backend was designed to fit MVC architecture in TypeScript.
+The frontend code was designed concerned with JS best practices to fit the use of NextJS tools/libs and Clean Code.
+
+Integration between front and back is intermediated by axios.
 
 ### Frontend
 :small_blue_diamond: **actions**: folder containing all the files with functions for communicating the application with the Redux Store;
@@ -82,12 +81,19 @@ The backend was designed to fit MVC architecture in TypeScript.
 
 ### Backend
 :small_blue_diamond: **business**: folder containing files with business rules;
+
 :small_blue_diamond: **controllers**: folder containing files with logic and intermediates requests between layers;
+
 :small_blue_diamond: **data**: folder responsible for API integration and Database communication;
+
 :small_blue_diamond: **dto**: folder containing Data Transfer Objects;
+
 :small_blue_diamond: **middlewares**: folder containing functions responsible for important connections of the API;
+
 :small_blue_diamond: **models**: folder containing the modelling of the data exchanged inside the API;
+
 :small_blue_diamond: **routes**: folder containing all paths for the API integration;
+
 :small_blue_diamond: **services**: folder containing all sort ;
 
 ## License :page_facing_up:
