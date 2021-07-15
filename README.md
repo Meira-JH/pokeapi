@@ -1,4 +1,4 @@
-# Pokemon API - UNDER DEVELOPMENT
+# Pokemon API :unicorn: - UNDER DEVELOPMENT
 A pokemon fan web application.
 
 
@@ -10,17 +10,19 @@ It consists in the development of a web-mobile-first application.
 
 :small_orange_diamond: The **backend** is an API coded in Typescript and integrated with a <a href="https://pokeapi.co/docs/v2">pokemon api</a> . 
 
-:small_orange_diamond: Front was inspired by some independent projects.
+:small_orange_diamond: Front was inspired by some independent projects and, although it contains mostly original code, it has some components and logics from <a href='https://github.com/marcelinosandroni/pokedex'> this repository </a> .
+
+## Project planning :bookmark_tabs:
+
+This web project is being followed through a <a href='https://trello.com/b/MSUP1AiW/pokemon-api'> Trello board </a>, in a Kanban style.
+
 
 ## Tools and technologies :wrench:
-  
 
 <p align="center">
 <img width="40px" src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"/>
 <img width="35px" src="https://raw.githubusercontent.com/jalbertsr/logo-badge-images/master/img/react_logo.png"/>
 <img width="35px" src="http://3con14.biz/code/_data/js/intro/js-logo.png"/>
-<img width="35px" src="https://github.com/MarioTerron/logo-images/blob/master/logos/jest.png"/>
-<img width="35px" src="https://github.com/MarioTerron/logo-images/blob/master/logos/npm.png"/>
 </p>
 
 <p>
@@ -35,30 +37,59 @@ It consists in the development of a web-mobile-first application.
 <p>
 <img height="22px" src="https://github.com/Meira-JH/futureEats/blob/master/futureEats/src/imgs/layout.png"/>
 </p>
-<p>
-<img height="22px" src="https://github.com/Meira-JH/futureEats/blob/master/futureEats/src/imgs/jest.png"/>
-</p>
 
-
-## The app  :iphone:
 
 ## Running the app :running:
 
-On your terminal, type:
+In this repository there is both front and backend.
 
+To get the repository on your machine, on your terminal, type:
 ```
-git clone https://github.com/Meira-JH/spotenu-frontend-project
+git clone https://github.com/Meira-JH/pokeapi-fullstack
 ```
 
-Install dependencies:
+### the frontend:
+1. Go inside the frontend folder (cd frontend)
+2. Install dependencies:
 ```
 yarn install
 ```
 
-Execute the application:
+3. Inside the folder create a .env file containing the following variable:
+```
+LOCAL_HOST=http://localhost:4000
+```
+
+This is necessary to direct the frontend requests to the port configured locally.
+
+3. Execute the application:
 ```
 yarn dev 
 ```
+
+### the backend:
+1. Go inside the backend folder (cd backend)
+2. Install dependencies:
+```
+yarn install
+```
+
+3. Inside the folder create a .env file containing the following variable:
+```
+BCRYPT_COST=3
+REFRESH_TOKEN_EXPIRES_IN=3000
+JWT_KEY=pokemon-api-project
+ACCESS_TOKEN_EXPIRES_IN=1d
+QUERY_LIMIT_FETCH_POKEMONS=20
+QUERY_OFFSET_FETCH_POKEMONS=0
+```
+
+3. Execute the application:
+```
+yarn dev 
+```
+
+
 
 ## Code architecture :computer:
 
