@@ -1,4 +1,4 @@
-# Pokemon API - UNDER DEVELOPMENT
+# Pokemon API :unicorn: - UNDER DEVELOPMENT
 A pokemon fan web application.
 
 
@@ -12,9 +12,10 @@ It consists in the development of a web-mobile-first application.
 
 :small_orange_diamond: Front was inspired by some independent projects and, although it contains mostly original code, it has some components and logics from <a href='https://github.com/marcelinosandroni/pokedex'> this repository </a> .
 
-## Project planning
+## Project planning :bookmark_tabs:
 
 This web project is being followed through a <a href='https://trello.com/b/MSUP1AiW/pokemon-api'> Trello board </a>, in a Kanban style.
+
 
 ## Tools and technologies :wrench:
 
