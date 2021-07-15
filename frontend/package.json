@@ -9,13 +9,14 @@
     "generate:container": "yarn plop --plopfile generators/plopfile-container.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.1",
     "axios": "^0.21.1",
     "next": "10.0.9",
     "prettier": "^2.2.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "styled-components": "^5.2.1",
-    "styled-icons": "^10.33.0"
+    "styled-icons": "^10.35.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

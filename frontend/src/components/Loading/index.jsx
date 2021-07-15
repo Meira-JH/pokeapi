@@ -1,8 +1,7 @@
 import * as S from './styles'
-import pokeball from 'assets/images/pokeball.svg'
 
 const Loading = ({size}) => {
-  return <S.Image src={pokeball} />
+  return <S.Image src={'static/img/pokeball.svg'} size={size}/>
 }
 
 export default Loading

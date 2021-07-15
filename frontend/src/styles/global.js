@@ -60,7 +60,7 @@ const GlobalStyles = createGlobalStyle`
       scroll-behavior: smooth;
     }
     body {
-      background-color: ${theme.colors.darkBrownBg};
+      background-color: ${theme.colors.white};
       color: ${theme.colors.boxBg};
       font-size: ${theme.font.sizes.small};
     }
@@ -80,9 +80,16 @@ const GlobalStyles = createGlobalStyle`
       color: #ffffff;
     }
 
+  
     h2::selection {
       background: ${theme.colors.primary};
       color: #ffffff;
+    }
+
+    h3{
+      color: black;
+      font-family: ${theme.font.primary};
+      margin: 50px;
     }
 
     h3::selection {

@@ -1,17 +1,12 @@
 import { useEffect } from 'react';
 import List from '../containers/List'
 
-export default function Home(props) {
+export default function Error(props) {
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if(!token){
-    }
-  }, [] );
-
+  
   return (
     <>
-    <List />
+    <h3>OPS! CONFIRA SUAS INFORMAÇÕES E TENTE NOVAMENTES</h3>
     </>
   );
 }

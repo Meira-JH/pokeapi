@@ -2,6 +2,13 @@ export default {
   container: {
     maxWidth: '1200px',
   },
+  height:{
+    default: '100vh',
+    max: '736px',
+  },
+  width:{
+    max: '375px',
+  },
   grid: {
     container: '130rem',
     gutter: '3.2rem',
@@ -46,10 +53,10 @@ export default {
     },
   },
   colors: {
-    primary: '#7FA2CB',
+    primary: '#67635C',
     primaryHover: '#7FA2CB',
-    secondary: '#7FA2CB',
-    mainBg: '#E6E6E6',
+    secondary: '#ffff',
+    mainBg: '#ffff',
     darkBrownBg: '#67635C',
     lightBrownBg: '#75726C',
     boxBg: '#FAFAFA',

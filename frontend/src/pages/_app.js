@@ -10,7 +10,7 @@ function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <Head>
         <title>Pokedex Web</title>
-        <link rel="shortcut icon" href="/static/img/" />
+        <link rel="shortcut icon" href="/static/img/pikachu-running.gif" />
         <link rel="apple-touch-icon" href="/static/img/" />
         <meta
           property="og:image"

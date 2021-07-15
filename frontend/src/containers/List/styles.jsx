@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Text = styled.h2`
   color: tomato;
-  font-size: ${props => props.theme.typography.h1};
+  font-size: 16px;
 `
 
 export const CardContainer = styled.div`
@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
   grid: auto / repeat(auto-fit, minmax(280px, 1fr));
   place-items: center;
   gap: 1rem;
-  padding: ${({theme}) => theme.space(2)};
+  padding: 5px;
 `
 
 export const ButtonMore = styled.button`
