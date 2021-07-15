@@ -1,8 +1,8 @@
 # Pokemon API :unicorn: - UNDER DEVELOPMENT
-A pokemon fan web application.
+<i>A pokemon fan web application.</i>
 
 
-<i>This is a full stack project.</i> 
+This is a full stack project.
 
 It consists in the development of a web-mobile-first application.
 
