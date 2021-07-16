@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { PokemonBusiness } from '../business/PokemonBusiness';
 import { PokemonAPI } from '../data/PokemonAPI';
-import { PokemonDetailsDTO } from '../dto/PokemonDTO';
 import { ERROR_MESSAGE } from '../models/errorMessage';
 import { Authenticator } from '../services/Authenticator';
 import { ThrowOn } from '../services/ThrowOn';
@@ -19,10 +18,6 @@ export class PokemonController {
         ? Number(request.query.offset)
         : Number(process.env.QUERY_OFFSET_FETCH_POKEMONS);
 
-    ThrowOn.validateField(token, {
-      message: ERROR_MESSAGE.NOT_AUTHORIZED,
-      status: 403,
-    });
 
     const user = new Authenticator().getData(token);
     ThrowOn.validateField(user, {
@@ -46,12 +41,12 @@ export class PokemonController {
     const token = request.headers.token as string;
     const pokemonName = request.params.name as string;
 
-    ThrowOn.validateField(token, {
+    const user = new Authenticator().getData(token);
+    ThrowOn.validateField(user, {
       message: ERROR_MESSAGE.NOT_AUTHORIZED,
-      status: 403,
-    });
+      status: 403
+    })
 
-    //NOTE: bring auth to controller
     const pokemonBusiness = new PokemonBusiness(
       new PokemonAPI(),
     );

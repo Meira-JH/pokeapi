@@ -2,18 +2,15 @@ import { UserDataBaseDTO } from '../dto/UserDTO';
 
 export class UserDatabase {
   private static TABLE_NAME = '../../users.json';
-  //NOTE: put private static to call     const userDataBase: UserDataBaseDTO[] = await require(UserDatabase.TABLE_NAME);
+  private static USER_DATABASE = require(UserDatabase.TABLE_NAME);
 
   public async getUserByEmail(email: string): Promise<UserDataBaseDTO | null> {
-    const userDataBase: UserDataBaseDTO[] =
-      await require(UserDatabase.TABLE_NAME);
+    const userDataBase: UserDataBaseDTO[] = await UserDatabase.USER_DATABASE;
 
-    //NOTE: change map for filter
-    const user = userDataBase.map((user: UserDataBaseDTO) => {
-      if (user.email === email) return user;
-    });
+    const user = userDataBase.find(
+      (user: UserDataBaseDTO) => user.email === email
+    );
 
-    return user[0] ?? null;
+    return user ?? null;
   }
-
 }
