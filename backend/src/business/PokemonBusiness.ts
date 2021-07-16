@@ -1,7 +1,5 @@
 import { PokemonAPI } from '../data/PokemonAPI';
 import { PokemonDetailsDTO } from '../dto/PokemonDTO';
-import { PokemonsSimpleListT } from '../models/pokemons';
-import { Authenticator } from '../services/Authenticator';
 
 export class PokemonBusiness {
   constructor(
